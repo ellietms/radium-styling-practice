@@ -1,0 +1,36 @@
+I used radium for advanced css features(using media queries and ) in my app, by installing radium
+--->npm install --save radium
+after that I import radium to my files for using radium features
+--->import Radium from 'radium'
+***IMpo:when I want to use radium for any components that I we need to wrap our component like this :
+--->export default Radium(APP) [App is the name of the component where I want to use radium features and I imported radium]
+
+{To understand more look at person and App component}
+--------------------------------------
+when I want to use a CSS pseudo like (:hover) {it means anything like this }
+{it is a keyword added to a selector that specifies a special state of the selected element(s). }
+
+I should use it as string like this ':hover';
+when I want to have css :
+const style = {
+    ':hover' : {
+        backgroundColor: 'yellow',
+        color: 'black'
+    }
+}
+
+{before return I can write down style :)} (if it is class component I can write it down inside of render
+if it is functional component it is before return)
+-----------------------------------------
+when I want to use queries I should write down query inside of string : 
+const style = {
+        '@media (min-width: 500px)': {
+            width: '450px'
+        }
+    };
+
+**IMPo:when I want to use media queries I should use a built in component <StyleRoot> 
+I need to import it at first {import {StyleRoot} from 'radium'} and after that I need to wrap 
+all of my codes inside of the return with this component.
+{In the root component}
+------------------------------------------
