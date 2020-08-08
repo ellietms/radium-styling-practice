@@ -2,7 +2,6 @@ We can add library (styled components)
 When we want to use this library we need to clean all of radium we 
 used in our app,we need to make sure we do not have import radium anywhere
  ---->npm install --save styled-components
-
 ------------------------------------------------------------------------------------
  I should  import styled from 'styled-components' at first
  and after that when I want to use anything like (button or div ...) with some styles I can
@@ -12,12 +11,36 @@ used in our app,we need to make sure we do not have import radium anywhere
  like this `backgroundColor:brown`...
  and we need to put the result inside of one variable with uppercase name..
  and wrap our codes inside of our return with this variable(which has the result of this styled.something) 
-
------------------------------------------------
+------------------------------------------------------------
 ** The result of this kind of style is a component and we need to replace our pervious tage with this component 
 which has those css we want
 
 ** inside of `` we always write the NORMAL CSS and we should not use
 Camel Case !! and at the end of each line we have semi colon (BE care ful)
 
------------------------------------------------------
+-------------------------------------------------------------
+when we have something like :hover we need to write down something like this :
+'&:hover'
+
+----------------------------------------------------------------
+when we have some conditions like if and else and we want to make some css changes for that
+condition (like if (something happened) have this css, else{have another css})
+when we have our new component (which we made by this library) we can add that condition as a prop
+to this component and just write down those changes we want to those properties that we want
+something like this:
+
+const StyledButton = styled.button`
+background-color: ${props =>  props.alt  ? 'red' : 'yellow'};
+      color: white;
+      font: inherit;
+      border:1px solid blue;
+      padding:8px;
+      cursor:pointer;
+
+      &:hover{
+        background-color:${props => props.alt ? 'blue' : 'green' };
+        color: 'black';
+      }
+`;
+
+alt is a prop inside of <StyledButton />
