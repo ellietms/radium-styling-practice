@@ -13,3 +13,9 @@ used in our app,we need to make sure we do not have import radium anywhere
  and we need to put the result inside of one variable with uppercase name..
  and wrap our codes inside of our return with this variable(which has the result of this styled.something) 
 
+-----------------------------------------------
+** The result of this kind of style is a component and we need to replace our pervious tage with this component 
+which has those css we want
+
+** inside of `` we always write the NORMAL CSS and we should not use
+Camel Case !! and at the end of each line we have semi colon (BE care ful)
